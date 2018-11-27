@@ -1,3 +1,5 @@
+package junitfaq;
+
 import java.util.*;
 import junit.framework.*;
 

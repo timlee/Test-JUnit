@@ -1,5 +1,6 @@
-package MySorter;
+package test;
 
+import MySorter.Sorter;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
