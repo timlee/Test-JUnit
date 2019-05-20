@@ -24,7 +24,11 @@ public class ShoppingCartTest {
 
 	@Test
 	public void testGetBalance() {
-		fail("Not yet implemented");
+		Product book2 = new Product("Programming","C++", 600); 
+		cart.addItem(book2);
+		double expectedPrice = book.getPrice() + book2.getPrice();
+		assertEquals(expectedPrice, cart.getBalance(),0);
+		
 	}
 
 	@Test
@@ -38,6 +42,15 @@ public class ShoppingCartTest {
 	public void testRemoveItem() throws ProductNotFoundException {
 		cart.removeItem(book);
 		assertEquals(0, cart.getItemCount());
+	}
+	
+	@Test
+	public void testRemoveItemNotInCart() throws ProductNotFoundException {
+		cart.removeItem(book);
+		Product book3 = new Product("Programming","Python", 550);
+		cart.removeItem(book3);
+		//fail("should raise a product not found exception");
+		//assertEquals(0, cart.getItemCount());
 	}
 
 	@Test
